@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery 101</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+.row{
+	margin-bottom: 5%;
+}
+.btn{
+padding: 10px 20px;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	
+	// $(document).ready()
+
+	// $(document).ready(function(){
+	// // this function can only be run inside of the document.ready method. This is called a callback
+	// 	$('button').click(function(){
+	// 		// console.log($(this));
+	// 		var theTrick = $(this).attr('todo');
+	// 		console.log(theTrick);
+	// 		if(theTrick === 'hide'){
+	// 			$('.thing').hide();
+	// 		}else if(theTrick === 'show'){
+	// 			$('.thing').show();
+	// 		}else if(theTrick === 'toggle'){
+	// 			$('.thing').toggle();
+	// 		}else if(theTrick ==='html'){
+	// 			$('.thing').html('<table border="2"<tr><td>Look me, I\'m a row</td><td></td></tr>Here is another cell.</td><td><tr>here is another row</tr></td>');
+	// 		}else if(theTrick ==='css'){
+	// 			$('.thing').css(
+	// 			//	this is JSON Mode - open brackets means object
+	// 			{
+	// 				'background-color': 'orange',
+	// 				'color': 'red',
+	// 				'font-size': '30px'
+	// 			}
+	// 			);
+	// 		};
+	// 	});
+	// });
+
+//Instead of having to type of $('.thing') all the time we can....
+
+	$(document).ready(function(){
+		var thing = $('.thing');
+	// this function can only be run inside of the document.ready method. This is called a callback
+		$('button').click(function(){
+			// console.log($(this));
+			var theTrick = $(this).attr('todo');
+			console.log(theTrick);
+			if(theTrick === 'hide'){
+				thing.hide();
+			}else if(theTrick === 'show'){
+				thing.show();
+			}else if(theTrick === 'toggle'){
+				thing.toggle();
+			}else if(theTrick ==='html'){
+				thing.html('<table border="2"<tr><td>Look me, I\'m a row</td><td></td></tr><td>Here is another cell.</td><td><tr>here is another row</tr></td>');
+			}else if(theTrick === 'append'){
+				thing.append('<div class="green">I have friends now.</div>');
+			}else if(theTrick ==='css'){
+				thing.css(
+				//	this is JSON Mode - open brackets means object
+				{
+					'background-color': 'orange',
+					'color': 'red',
+					'font-size': '30px'
+				});
+			}else if(theTrick==='text'){
+				thing.text('Just some new text baby')
+			}else if (theTrick =='each'){
+				$('button').each(function(){
+					console.log($(this).text());
+				})
+			// same as var buttons = document.getElementsByTagName('button');
+			// 		for(i=0; i<buttons.length;i++)
+			// 			something got deleted
+			}
+			
+		});
+	});
+
+
+
+	// 	$('#hide').click(function(){
+	// 		// this is an event handler or listener
+	// 		// console.log('Test');
+	// 		$('.thing').hide();
+	// 		// same as document.getElementsByClassName('thing').style.display = "none";
+	// 	});
+	// 	$('#show').click(function(){
+	// 		$('.thing').show();
+	// 	});
+	// });
+
+	// document.getElementById("wrapper")
+	// $("#wrapper");
+	
+	// document.getElementsByClassName("row");
+	// $(".row");
+	
+	// document.getElementsByTagName('button');
+	// $('button');
+	// console.log($('button'));
+
+
+</script>
+
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="hide">Hide</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="show">Show!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="toggle">Toggle!!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="css">CSS Sucks</button>
+		</div>
+	</div>
+	<div class="row">	
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="html">HTML</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="append">APPEND ME!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="text">Text!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="each">Each Each!</button>
+		</div>
+	</div>
+	<div class="row">	
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="assClass">addClass</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="removeClass">removeClass!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="animate">Animate Me!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="delay">Delay Me Baby!</button>
+		</div>
+	</div>
+	<div class="row">	
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="slice">Slice</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="fade">Fade!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="fadeIn">fade In!!!</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="val">VAL!!!</button>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-success thing">Do something to me!</button>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>
