@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,133 +17,9 @@ padding: 10px 20px;
 button.thing{
 	position:absolute;
 }
-
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-<script type="text/javascript">
-	
-	// $(document).ready()
-
-	// $(document).ready(function(){
-	// // this function can only be run inside of the document.ready method. This is called a callback
-	// 	$('button').click(function(){
-	// 		// console.log($(this));
-	// 		var theTrick = $(this).attr('todo');
-	// 		console.log(theTrick);
-	// 		if(theTrick === 'hide'){
-	// 			$('.thing').hide();
-	// 		}else if(theTrick === 'show'){
-	// 			$('.thing').show();
-	// 		}else if(theTrick === 'toggle'){
-	// 			$('.thing').toggle();
-	// 		}else if(theTrick ==='html'){
-	// 			$('.thing').html('<table border="2"<tr><td>Look me, I\'m a row</td><td></td></tr>Here is another cell.</td><td><tr>here is another row</tr></td>');
-	// 		}else if(theTrick ==='css'){
-	// 			$('.thing').css(
-	// 			//	this is JSON Mode - open brackets means object
-	// 			{
-	// 				'background-color': 'orange',
-	// 				'color': 'red',
-	// 				'font-size': '30px'
-	// 			}
-	// 			);
-	// 		};
-	// 	});
-	// });
-
-//Instead of having to type of $('.thing') all the time we can....
-
-	$(document).ready(function(){
-		var thing = $('.thing');
-	// this function can only be run inside of the document.ready method. This is called a callback
-		$('button').click(function(){
-			// console.log($(this));
-			var theTrick = $(this).attr('todo');
-			console.log(theTrick);
-			if(theTrick === 'hide'){
-				thing.hide();
-			}else if(theTrick === 'show'){
-				thing.show();
-			}else if(theTrick === 'toggle'){
-				thing.toggle();
-			}else if(theTrick ==='html'){
-				thing.html('<table border="2"<tr><td>Look me, I\'m a row</td><td></td></tr><td>Here is another cell.</td><td><tr>here is another row</tr></td>');
-			}else if(theTrick === 'append'){
-				thing.append('<div class="green">I have friends now.</div>');
-			}else if(theTrick ==='css'){
-				thing.css(
-				//	this is JSON Mode - open brackets means object
-				{
-					'background-color': 'orange',
-					'color': 'red',
-					'font-size': '30px'
-				});
-			}else if(theTrick==='text'){
-				thing.text('Just some new text baby');
-			}else if (theTrick ==='each'){
-				$('button').each(function(){
-					console.log($(this).text());
-				})
-			// same as var buttons = document.getElementsByTagName('button');
-			// 		for(i=0; i<buttons.length;i++)
-			// 			something got deleted
-			}else if (theTrick === 'addClass'){
-				thing.addClass('btn btn-danger');
-				thing.text('Added Danger Class');
-			}else if (theTrick === 'removeClass'){
-				thing.removeClass('btn btn-danger');
-				thing.text('Removed btn btn-danger');
-			}else if (theTrick === 'animate'){
-				thing.animate({left: '500px', height:'150px', width: '150px'});
-				thing.text('Im Animated!!');
-			}else if(theTrick=== 'delay'){
-				thing.delay('slow').fadeOut();
-    			thing.delay("fast").fadeIn();
-    			thing.delay(800).fadeOut();
-    			thing.delay(2000).fadeIn();
-    			thing.delay(4000).fadeIn();
-    		}else if(theTrick==='slice'){
-    			thing.slice('thing').css("background-color", "yellow");
-    		}else if (theTrick==='fadeOut'){
-    			thing.fadeOut('slow');
-    		}else if (theTrick==='fadeIn'){
-    			thing.fadeIn('slow');
-    		}else if (theTrick==='val'){
-    			thing.val('I\'m learning jQuery');
-    		}
-
-			
-
-			
-		});
-	});
-
-
-
-	// 	$('#hide').click(function(){
-	// 		// this is an event handler or listener
-	// 		// console.log('Test');
-	// 		$('.thing').hide();
-	// 		// same as document.getElementsByClassName('thing').style.display = "none";
-	// 	});
-	// 	$('#show').click(function(){
-	// 		$('.thing').show();
-	// 	});
-	// });
-
-	// document.getElementById("wrapper")
-	// $("#wrapper");
-	
-	// document.getElementsByClassName("row");
-	// $(".row");
-	
-	// document.getElementsByTagName('button');
-	// $('button');
-	// console.log($('button'));
-
-
-</script>
+<script type="text/javascript" src="js/scripts.js"></script>
 
 <body>
 
@@ -201,21 +78,23 @@ button.thing{
 		</div>
 		<div class="col-sm-3 text-center">
 			<button class="btn btn-primary" todo="val">VAL!!!</button>
+			<input class="value" type="text">
 		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="remove-attr">Remove Attribute</button>
+		</div>
+		<div class="col-sm-3 text-center">
+			<button class="btn btn-primary" todo="add-attr">Add Attribute</button>
+		</div>
+
 	</div>
 	
 	<div class="row">
-		<div class="col-sm-3 text-center">
-			<button class="btn btn-success thing">Do something to me!</button>
-		</div>
-		<div class="col-sm-3 text-center">
-			<input class="thing" type="text">
-			<button>Set Val Here</button>
+		<div class="col-sm-3 text-center text-center">
+			<button class="btn btn-success att thing">Do something to me!</button>
 		</div>
 	</div>
 </div>
-
-
-
 </body>
 </html>
+
