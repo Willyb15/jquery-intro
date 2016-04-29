@@ -1,6 +1,6 @@
 # jQuery-intro
 ##Application showcasing common methods in jQuery
-##Bread and Butter right here...
+##Bread and Butter Methods shown here...
 ```js
 	$(document).ready(function(){
 		var thing = $('.thing');
